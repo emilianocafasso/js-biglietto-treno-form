@@ -24,7 +24,6 @@ Ora che la logica è funzionante in pagina, possiamo andare a dedicarci allo sti
 
 const kmInput = document.getElementById("km");
 const etaInput = document.getElementById("eta");
-const bottone = document.getElementById("genera");
 const form = document.getElementById("ticket-form")
 
 form.addEventListener("submit", function(event) {
