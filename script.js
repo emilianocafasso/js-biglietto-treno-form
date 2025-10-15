@@ -29,8 +29,12 @@ const name = document.getElementById("name")
 const cell_name = document.getElementById("cell_name")
 const cell_offerta = document.getElementById("cell_offerta")
 const cell_carrozza = document.getElementById("cell_carrozza")
+const cell_CP_code = document.getElementById("cell_code-CP")
+const cell_price = document.getElementById("cell_price") 
 
-
+function RandomInteger(min, max) {
+    return Math.floor(Math.random()*(max-min+1))+min
+} 
 
 form.addEventListener("submit", function(event) {
     event.preventDefault()
@@ -58,8 +62,17 @@ form.addEventListener("submit", function(event) {
     cell_name.textContent = name.value
     cell_offerta.textContent = offerta
 
-    
+    let carrozza = RandomInteger(1, 10)
+    cell_carrozza.textContent = carrozza
+
+    let code = RandomInteger(10000, 99999)
+    cell_CP_code.textContent = code
+
+    cell_price.textContent = prezzo + "€"
 
 })
+
+
+
 
 
