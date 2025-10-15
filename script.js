@@ -25,6 +25,12 @@ Ora che la logica è funzionante in pagina, possiamo andare a dedicarci allo sti
 const kmInput = document.getElementById("km");
 const etaInput = document.getElementById("eta");
 const form = document.getElementById("ticket-form")
+const name = document.getElementById("name")
+const cell_name = document.getElementById("cell_name")
+const cell_offerta = document.getElementById("cell_offerta")
+const cell_carrozza = document.getElementById("cell_carrozza")
+
+
 
 form.addEventListener("submit", function(event) {
     event.preventDefault()
@@ -35,14 +41,25 @@ form.addEventListener("submit", function(event) {
 
     //calcolo prezzo base
     let prezzo = km * 0.21
+    let offerta = "Biglietto Standard"
 
     if(eta<18) {
         prezzo *= 0.8
+        offerta = "Biglietto Minorenne"
     }
     else if(eta>65) {
         prezzo *= 0.6
+        offerta = "Biglietto Anziano"
     }
     
     //stampo in console
     console.log("Prezzo del biglietto: ", prezzo.toFixed(2), "€");
+
+    cell_name.textContent = name.value
+    cell_offerta.textContent = offerta
+
+    
+
 })
+
+
